@@ -1,0 +1,131 @@
+/* Color palette variables */
+:root {
+  --color-primary: #4F8A8B;
+  --color-primary-light: #50B2C0;
+  --color-secondary: #7BD389;
+  --color-secondary-dark: #43B581;
+  --color-success: #00C48C;
+  --color-warning: #FFC857;
+  --color-error: #FF6B6B;
+  --color-error-dark: #ED254E;
+  --color-bg-main: #F6F8FB;
+  --color-bg-card: #FFFFFF;
+  --color-bg-surface: #E9F0F6;
+  --color-text-main: #222C32;
+  --color-text-secondary: #4F8A8B;
+}
+
+.dark {
+  --color-primary: #4F8A8B;
+  --color-primary-light: #50B2C0;
+  --color-secondary: #7BD389;
+  --color-secondary-dark: #43B581;
+  --color-success: #00C48C;
+  --color-warning: #FFC857;
+  --color-error: #FF6B6B;
+  --color-error-dark: #ED254E;
+  --color-bg-main: #1A2226;
+  --color-bg-card: #27343A;
+  --color-bg-surface: #222C32;
+  --color-text-main: #F6F8FB;
+  --color-text-secondary: #50B2C0;
+}
+
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+
+body {
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Dark mode styles */
+.dark body, .dark #root {
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+
+.dark .MuiPaper-root, .dark .card, .dark .summaryCard, .dark .progressCard {
+  background: var(--color-bg-card) !important;
+  color: var(--color-text-main) !important;
+  box-shadow: 2px 0px 10px rgba(0,0,0,0.4) !important;
+}
+
+.dark .friendCard, .dark .MuiPaper-root, .dark .card, .dark .summaryCard, .dark .progressCard {
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.32) !important;
+}
+
+.dark header, .dark .appBar {
+  background: var(--color-bg-surface) !important;
+  color: var(--color-text-main) !important;
+}
+
+.dark aside, .dark .drawer {
+  background: var(--color-bg-surface) !important;
+  color: var(--color-text-main) !important;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.4) !important;
+}
+
+.dark .MuiTypography-root, .dark .MuiTypography-h5, .dark .MuiTypography-body1 {
+  color: var(--color-text-main) !important;
+}
+
+.dark .MuiButton-outlined {
+  border-color: var(--color-primary-light) !important;
+  color: var(--color-text-main) !important;
+}
+
+.dark .MuiSwitch-root .MuiSwitch-thumb {
+  background: #fff !important;
+}
+
+.dark .MuiAvatar-root {
+  background: #444 !important;
+}
+
+.dark .MuiLinearProgress-root {
+  background: #333 !important;
+}

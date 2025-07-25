@@ -1,0 +1,110 @@
+.container {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 32px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 32px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+p {
+  color: var(--color-text-main);
+  font-size: 1.1rem;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.createBtn {
+  background: linear-gradient(90deg, var(--color-primary) 60%, var(--color-primary-light) 100%);
+  color: var(--color-bg-card);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(79, 138, 139, 0.08);
+}
+.createBtn:hover {
+  background: linear-gradient(90deg, var(--color-primary-light) 60%, var(--color-primary) 100%);
+} 
+
+.pageWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 16px 24px 16px;
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.groupsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px 32px;
+  margin-top: 24px;
+}
+
+.groupCard {
+  border-radius: 20px !important;
+  box-shadow: 2px 0px 10px rgba(3,3,3,0.1) !important;
+  background: var(--color-bg-card);
+  width: 100%;
+  max-width: none;
+  overflow: visible;
+  height: auto;
+  color: var(--color-text-main);
+  min-height: 400px;
+}
+
+.groupTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-text-main);
+}
+
+.groupMeta {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2px;
+}
+.groupMeta span {
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
+.joinGroupBtn {
+  margin-top: 24px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: var(--color-bg-card);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(79, 138, 139, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.joinGroupBtn:hover {
+  background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  box-shadow: 0 4px 16px rgba(79, 138, 139, 0.12);
+} 

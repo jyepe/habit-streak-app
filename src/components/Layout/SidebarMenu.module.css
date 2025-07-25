@@ -1,0 +1,59 @@
+.menu {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  color: #111;
+  padding: 8px 0 8px 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.menu li:hover {
+  background: #f7fbff;
+}
+.menu li svg {
+  font-size: 1.6rem;
+  color: #111;
+}
+.userImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #eee;
+}
+.menu li span {
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+
+.menuLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.active {
+  font-weight: 700;
+  background: #f0f4ff;
+  border-left: 4px solid #1976d2;
+  color: #1976d2;
+  transition: background 0.15s, color 0.15s;
+} 

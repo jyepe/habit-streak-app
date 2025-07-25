@@ -1,0 +1,137 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  padding: 0 8px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.13), 0 1.5px 6px rgba(0,0,0,0.06);
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  padding: 44px 36px 36px 36px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  background: #e3f2fd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  font-size: 2.2rem;
+  color: #1976d2;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+h2 {
+  color: #1976d2;
+  margin-bottom: 8px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 2px;
+  margin-top: 6px;
+  text-align: left;
+}
+
+.input {
+  color: #222;
+  padding: 12px 14px;
+  border: 1.5px solid #bdbdbd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+  background: #fff;
+}
+
+.input:focus, .input:hover {
+  border: 1.5px solid #1976d2;
+  background: #fff;
+}
+
+.button {
+  margin-top: 10px;
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 13px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  letter-spacing: 0.5px;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+}
+
+.loginLink {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+.loginLink a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.loginLink a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .card {
+    max-width: 98vw;
+    padding: 24px 4vw 18px 4vw;
+    gap: 12px;
+  }
+  .logo {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .input {
+    font-size: 0.98rem;
+    padding: 10px 10px;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+} 

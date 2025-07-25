@@ -1,0 +1,237 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px 24px 16px;
+}
+
+.welcome {
+  color: var(--color-primary);
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.streakCard {
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-card);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(79, 138, 139, 0.07);
+  padding: 24px 32px;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.streakIcon {
+  background: var(--color-bg-surface);
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  box-shadow: 0 2px 8px rgba(79, 138, 139, 0.08);
+}
+
+.streakLabel {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.streakValue {
+  color: var(--color-primary);
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.groupsSection {
+  background: var(--color-bg-card);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(79, 138, 139, 0.07);
+  padding: 24px 32px 18px 32px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.createBtn {
+  margin-left: auto;
+  background: linear-gradient(90deg, var(--color-primary) 60%, var(--color-primary-light) 100%);
+  color: var(--color-bg-card);
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+.createBtn:hover {
+  background: linear-gradient(90deg, var(--color-primary-light) 60%, var(--color-primary) 100%);
+}
+
+.groupList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.groupItem {
+  background: var(--color-bg-surface);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(79, 138, 139, 0.04);
+  display: flex;
+  align-items: center;
+}
+
+.joinBtn {
+  background: var(--color-bg-card);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.joinBtn:hover {
+  background: var(--color-bg-surface);
+  color: var(--color-secondary-dark);
+}
+
+.activitySection {
+  background: var(--color-bg-card);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(79, 138, 139, 0.07);
+  padding: 24px 32px 18px 32px;
+}
+
+.activityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: 1.08rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dashboardWrapper {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+
+.dashboardGrid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: stretch;
+  overflow: visible;
+}
+
+.card, .summaryCard, .progressCard {
+  border-radius: 20px !important;
+  box-shadow: 2px 0px 10px rgba(3,3,3,0.1) !important;
+  background: var(--color-bg-card);
+  width: 100%;
+  max-width: none;
+  overflow: visible;
+  height: auto;
+  color: var(--color-text-main);
+}
+
+.summaryCard {
+  min-width: 160px;
+  flex: 1;
+  margin-right: 0;
+}
+
+.progressCard {
+  min-width: 180px;
+  flex: 1;
+  background: var(--color-bg-card);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-radius: 20px !important;
+}
+
+.welcomeRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.sectionHeader, .MuiTypography-h5, .MuiTypography-root.MuiTypography-h5 {
+  color: var(--color-text-main) !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 18px !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 18px 2vw 12px 2vw;
+  }
+  .dashboard {
+    gap: 18px;
+  }
+  .streakCard, .groupsSection, .activitySection {
+    padding: 16px 8px 12px 8px;
+  }
+  .groupList {
+    gap: 7px;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboardWrapper {
+    max-width: 100vw;
+    padding: 16px 0 16px 0;
+  }
+  .dashboardGrid {
+    width: 100vw;
+    gap: 0;
+    overflow: visible;
+  }
+  .card, .summaryCard, .progressCard {
+    border-radius: 14px !important;
+    overflow: visible;
+    width: 100%;
+    max-width: none;
+  }
+} 
