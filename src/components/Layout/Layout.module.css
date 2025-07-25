@@ -20,6 +20,23 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.menuButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .logo {
   letter-spacing: 1px;
 }
@@ -28,13 +45,48 @@
   width: 220px;
   background: var(--color-bg-card);
   box-shadow: 2px 0 8px rgba(0,0,0,0.04);
-  padding-top: 56px;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   z-index: 900;
   color: var(--color-text-main);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerClosed {
+  transform: translateX(-100%);
+}
+
+.drawerHeader {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-bg-surface);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: var(--color-bg-surface);
 }
 
 .drawer nav ul {
@@ -67,7 +119,7 @@
 .main {
   width: 100%;
   max-width: 1400px;
-  margin: 56px auto 0 220px;
+  margin: 56px auto 0 0;
   padding: 32px 24px;
   box-sizing: border-box;
   flex: 1;
@@ -76,6 +128,15 @@
   overflow-y: auto;
   overflow-x: hidden;
   height: calc(100vh - 56px);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.mainWithSidebar {
+  margin-left: 220px;
+}
+
+.mainWithoutSidebar {
+  margin-left: 0;
 }
 
 @media (max-width: 900px) {
@@ -86,5 +147,13 @@
     height: calc(100vh - 56px);
     overflow-y: auto;
     overflow-x: hidden;
+  }
+  
+  .mainWithSidebar {
+    margin-left: 0;
+  }
+  
+  .drawer {
+    width: 280px;
   }
 } 
