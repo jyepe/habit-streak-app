@@ -55,115 +55,165 @@ const Home: React.FC = () => {
   ];
 
   return (
-  <Box className={styles.dashboardWrapper}>
-    <Grid container spacing={4}>
-      {/* This Week + Bar Chart */}
-      <Grid size={{ xs: 12, md: 7 }}>
-        <Typography color="primary" variant="h5" fontWeight={700} mb={2}>This Week</Typography>
-        <Card className={styles.card}>
-          <CardContent>
-            <Typography fontSize={14} color="text.secondary" mb={1}>progress logged</Typography>
-            <Typography variant="h4" fontWeight={700} mb={2}>25 hours</Typography>
-            <ResponsiveContainer width="100%" height={120}>
-              <BarChart data={weekData}>
-                <XAxis dataKey="day" axisLine={false} tickLine={false} />
-                <YAxis hide />
-                <Tooltip />
-                <Bar dataKey="hours" fill="#b39ddb" radius={[8, 8, 0, 0]} barSize={28} />
-              </BarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-        <Box display="flex" gap={3} mt={3}>
-          <Card className={styles.summaryCard}>
+    <Box className={styles.dashboardWrapper}>
+      <Grid container spacing={{ xs: 2, md: 4 }}>
+        {/* This Week + Bar Chart */}
+        <Grid size={{ xs: 12, lg: 7 }}>
+          <Typography color="primary" variant="h5" fontWeight={700} mb={2}>This Week</Typography>
+          <Card className={styles.card}>
             <CardContent>
-              <Box display="flex" alignItems="center" gap={1} mb={1}><FlagIcon fontSize="small" /><Typography fontSize={14}>Goal</Typography></Box>
-              <Typography fontWeight={700}>3/7 days</Typography>
+              <Typography fontSize={14} color="text.secondary" mb={1}>progress logged</Typography>
+              <Typography variant="h4" fontWeight={700} mb={2}>25 hours</Typography>
+              <ResponsiveContainer width="100%" height={120}>
+                <BarChart data={weekData}>
+                  <XAxis dataKey="day" axisLine={false} tickLine={false} />
+                  <YAxis hide />
+                  <Tooltip />
+                  <Bar dataKey="hours" fill="#b39ddb" radius={[8, 8, 0, 0]} barSize={28} />
+                </BarChart>
+              </ResponsiveContainer>
             </CardContent>
           </Card>
-          <Card className={styles.summaryCard}>
-            <CardContent>
-              <Box display="flex" alignItems="center" gap={1} mb={1}><EmojiEventsIcon fontSize="small" /><Typography fontSize={14}>Streak</Typography></Box>
-              <Typography fontWeight={700}>50 days</Typography>
-            </CardContent>
-          </Card>
-        </Box>
-      </Grid>
-
-      {/* My Habits */}
-      <Grid size={{ xs: 12, md: 5 }}>
-        <Typography color="primary" variant="h5" fontWeight={700} mb={2}>Todays Habits</Typography>
-        <Card className={styles.card}>
-          <CardContent>
-            {habitsState.map((h, i) => (
-              <Box key={h.id} display="flex" alignItems="center" gap={2} mb={i < habitsState.length - 1 ? 1 : 0}>
-                <Avatar src={h.avatar} sx={{ width: 36, height: 36 }} />
-                <Box flex={1}>
-                  <Typography fontWeight={500}>{h.name}</Typography>
-                  <Typography fontSize={13} color="text.secondary">{h.group}{h.last ? ` • ${h.last}` : ''}</Typography>
-                </Box>
-                <Button
-                  variant={h.completed ? "contained" : "outlined"}
-                  size="small"
-                  onClick={() => handleHabitToggle(h.id)}
-                  sx={{
-                    minWidth: 'auto',
-                    px: 2,
-                    py: 0.5,
-                    bgcolor: h.completed ? '#4caf50' : 'transparent',
-                    color: h.completed ? 'white' : '#4caf50',
-                    borderColor: '#4caf50',
-                    '&:hover': {
-                      bgcolor: h.completed ? '#45a049' : '#f0f8f0',
-                    }
-                  }}
-                >
-                  {h.completed ? '✓' : 'Mark Done'}
-                </Button>
-              </Box>
-            ))}
-            <Button variant="outlined" sx={{ mt: 2, width: '100%' }}>View all habits</Button>
-          </CardContent>
-        </Card>
-      </Grid>
-
-      {/* My Progress */}
-      <Grid size={{ xs: 12, md: 7 }}>
-        <Typography color="primary" variant="h5" fontWeight={700} mb={2}>My Progress</Typography>
-        <Box display="flex" gap={2}>
-          {progressStats.map((stat) => (
-            <Card key={stat.label} className={styles.progressCard}>
+          <Box display="flex" gap={{ xs: 1, md: 3 }} mt={3} flexDirection={{ xs: 'column', sm: 'row' }}>
+            <Card className={styles.summaryCard}>
               <CardContent>
-                <Box display="flex" alignItems="center" justifyContent="center" mb={1}>
-                  <Avatar sx={{ bgcolor: '#f3e5f5', color: '#7c4dff', width: 36, height: 36 }}>{stat.icon}</Avatar>
+                <Box display="flex" alignItems="center" gap={1} mb={1}>
+                  <FlagIcon fontSize="small" />
+                  <Typography fontSize={14}>Goal</Typography>
                 </Box>
-                <Typography fontWeight={700} fontSize={18}>{stat.value}</Typography>
-                <Typography color="text.secondary" fontSize={14}>{stat.label}</Typography>
+                <Typography fontWeight={700}>3/7 days</Typography>
               </CardContent>
             </Card>
-          ))}
-        </Box>
-      </Grid>
-
-      {/* Last Month Comparison */}
-      <Grid size={{ xs: 12, md: 5 }}>
-        <Typography color="primary" variant="h5" fontWeight={700} mb={2}>Last Month Comparison</Typography>
-        <Card className={styles.card}>
-          <CardContent>
-            {lastMonth.map((item) => (
-              <Box key={item.label} mb={2}>
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                  <Typography fontSize={15}>{item.label}</Typography>
-                  <Typography fontSize={15} fontWeight={700}>{item.value}%</Typography>
+            <Card className={styles.summaryCard}>
+              <CardContent>
+                <Box display="flex" alignItems="center" gap={1} mb={1}>
+                  <EmojiEventsIcon fontSize="small" />
+                  <Typography fontSize={14}>Streak</Typography>
                 </Box>
-                <LinearProgress variant="determinate" value={item.value} sx={{ height: 10, borderRadius: 5, background: '#f5f5f5', mt: 1 }} />
-              </Box>
+                <Typography fontWeight={700}>50 days</Typography>
+              </CardContent>
+            </Card>
+          </Box>
+        </Grid>
+
+        {/* My Habits */}
+        <Grid size={{ xs: 12, lg: 5 }}>
+          <Typography color="primary" variant="h5" fontWeight={700} mb={2}>Today's Habits</Typography>
+          <Card className={styles.card}>
+            <CardContent>
+              {habitsState.map((h, i) => (
+                <Box 
+                  key={h.id} 
+                  display="flex" 
+                  alignItems="center" 
+                  gap={2} 
+                  mb={i < habitsState.length - 1 ? 2 : 0}
+                  flexDirection={{ xs: 'column', sm: 'row' }}
+                  sx={{ 
+                    p: { xs: 1, sm: 0 },
+                    borderRadius: { xs: 1, sm: 0 },
+                    bgcolor: { xs: 'rgba(0,0,0,0.02)', sm: 'transparent' }
+                  }}
+                >
+                  <Avatar src={h.avatar} sx={{ width: { xs: 48, sm: 36 }, height: { xs: 48, sm: 36 } }} />
+                  <Box flex={1} textAlign={{ xs: 'center', sm: 'left' }}>
+                    <Typography fontWeight={500} fontSize={{ xs: 16, sm: 14 }}>{h.name}</Typography>
+                    <Typography fontSize={{ xs: 14, sm: 13 }} color="text.secondary">
+                      {h.group}{h.last ? ` • ${h.last}` : ''}
+                    </Typography>
+                  </Box>
+                  <Button
+                    variant={h.completed ? "contained" : "outlined"}
+                    size="small"
+                    onClick={() => handleHabitToggle(h.id)}
+                    sx={{
+                      minWidth: 'auto',
+                      px: { xs: 3, sm: 2 },
+                      py: { xs: 1, sm: 0.5 },
+                      bgcolor: h.completed ? '#4caf50' : 'transparent',
+                      color: h.completed ? 'white' : '#4caf50',
+                      borderColor: '#4caf50',
+                      '&:hover': {
+                        bgcolor: h.completed ? '#45a049' : '#f0f8f0',
+                      }
+                    }}
+                  >
+                    {h.completed ? '✓' : 'Mark Done'}
+                  </Button>
+                </Box>
+              ))}
+              <Button 
+                variant="outlined" 
+                sx={{ 
+                  mt: 2, 
+                  width: '100%',
+                  py: { xs: 1.5, sm: 1 }
+                }}
+              >
+                View all habits
+              </Button>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* My Progress */}
+        <Grid size={{ xs: 12, lg: 7 }}>
+          <Typography color="primary" variant="h5" fontWeight={700} mb={2}>My Progress</Typography>
+          <Grid container spacing={{ xs: 1, md: 2 }}>
+            {progressStats.map((stat) => (
+              <Grid size={{ xs: 12, sm: 4 }} key={stat.label}>
+                <Card className={styles.progressCard}>
+                  <CardContent>
+                    <Box display="flex" alignItems="center" justifyContent="center" mb={1}>
+                      <Avatar sx={{ 
+                        bgcolor: '#f3e5f5', 
+                        color: '#7c4dff', 
+                        width: { xs: 48, sm: 36 }, 
+                        height: { xs: 48, sm: 36 } 
+                      }}>
+                        {stat.icon}
+                      </Avatar>
+                    </Box>
+                    <Typography fontWeight={700} fontSize={{ xs: 20, sm: 18 }} textAlign="center">
+                      {stat.value}
+                    </Typography>
+                    <Typography color="text.secondary" fontSize={{ xs: 16, sm: 14 }} textAlign="center">
+                      {stat.label}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
             ))}
-          </CardContent>
-        </Card>
+          </Grid>
+        </Grid>
+
+        {/* Last Month Comparison */}
+        <Grid size={{ xs: 12, lg: 5 }}>
+          <Typography color="primary" variant="h5" fontWeight={700} mb={2}>Last Month Comparison</Typography>
+          <Card className={styles.card}>
+            <CardContent>
+              {lastMonth.map((item) => (
+                <Box key={item.label} mb={3}>
+                  <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
+                    <Typography fontSize={{ xs: 16, sm: 15 }}>{item.label}</Typography>
+                    <Typography fontSize={{ xs: 16, sm: 15 }} fontWeight={700}>{item.value}%</Typography>
+                  </Box>
+                  <LinearProgress 
+                    variant="determinate" 
+                    value={item.value} 
+                    sx={{ 
+                      height: { xs: 12, sm: 10 }, 
+                      borderRadius: { xs: 6, sm: 5 }, 
+                      background: '#f5f5f5' 
+                    }} 
+                  />
+                </Box>
+              ))}
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
-    </Grid>
-  </Box>
+    </Box>
   );
 };
 

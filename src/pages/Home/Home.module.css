@@ -179,6 +179,7 @@
   min-width: 160px;
   flex: 1;
   margin-right: 0;
+  width: 100%;
 }
 
 .progressCard {
@@ -187,6 +188,8 @@
   background: var(--color-bg-card);
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   border-radius: 20px !important;
+  width: 100%;
+  height: 100%;
 }
 
 .welcomeRow {
@@ -233,5 +236,23 @@
     overflow: visible;
     width: 100%;
     max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboardWrapper {
+    padding: 12px 0 12px 0;
+  }
+  
+  .card {
+    border-radius: 12px !important;
+  }
+  
+  .summaryCard {
+    min-width: auto;
+  }
+  
+  .progressCard {
+    min-width: auto;
   }
 } 
